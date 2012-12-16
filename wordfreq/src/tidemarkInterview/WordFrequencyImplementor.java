@@ -14,9 +14,13 @@ public class WordFrequencyImplementor {
 
 		try{
 			s = br.readLine();
+			boolean isWhiteSpace = s.matches("^\\s*$");
+			if((s.length()<1) || isWhiteSpace){
+				System.out.println("Invalid String, Please enter a valid String.");
+			}else{
 			WordFrequency wf = new WordFrequency(s);
 			wf.printFrequency();
-
+			}
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
